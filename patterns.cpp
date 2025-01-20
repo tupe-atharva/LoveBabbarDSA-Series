@@ -602,7 +602,7 @@ for (int i = 1; i <=5; i++)
     
     // triangle 1 
 
-    for (int j = 1; j < ; j++)
+    for (int j = 1; j < 0; j++)
     {
         /* code */
     }
