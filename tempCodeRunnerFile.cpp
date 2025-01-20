@@ -1,4 +1,2 @@
-for(int i = 1; i<5; i--){
-  cout<<i<endl;
-  i++;
-}
+cout<<"the sum is : "<<sum<<endl;
+      // cout<<"the product is : "<<product<<endl;
