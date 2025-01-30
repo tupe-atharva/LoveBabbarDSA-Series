@@ -1,1 +1,3 @@
- // int answer;
+if(array[i] < min){
+        min = array[i];
+    }
