@@ -27,7 +27,7 @@ int main(){
             }
         }
     } 
-    // outside loop runs 4 times, pushing largest element towards right in ach iteration.
+    // outside loop runs 4 times, pushing largest element towards right in each iteration.
     // inside loop runs for 4 - 3 - 2 - 1 times.
     cout<<"The sorted array in Ascending order is : " << endl;
     for (int i = 0; i < 5; i++)
