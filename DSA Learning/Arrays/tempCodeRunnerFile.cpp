@@ -1,3 +1,7 @@
-reverse(arr , 0 , size-1); // Rotate entire array.
-reverse(arr , 0 , rotations-1); //Reverse upto the value of rotations from 0th index
-reverse(arr , rotations, size-1); // Reverse the remaining part.
+   for (int i = 0; i < length - 1; i++) {
+        for (int j = 0; j < length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]); 
+            }
+        }
+    }
