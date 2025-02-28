@@ -1,0 +1,1 @@
+cout << "Converted to lower case :  " << toLower(ch , count);
