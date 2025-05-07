@@ -29,15 +29,20 @@ int main(){
 
 //Pointer Arithmetic :
 
-int num = 5;
-int *p =&num;
+// int num = 5;
+// int *p =&num;
 // *p++; this increments the memory location of p and not the value it is pointing at.
 // *(p)++ increments the value at which p is pointing.
-(*p)++;
-cout << "Value is : " << num << endl;
-cout << "Initial address is : " << p << endl;
-p++;
-cout << "Updated address is : " << p << endl;
+// (*p)++;
+// cout << "Value is : " << num << endl;
+// cout << "Initial address is : " << p << endl;
+// p++;
+// cout << "Updated address is : " << p << endl;
 
+
+int *ptr = 0;
+int a = 10;
+*ptr = a;
+cout << *ptr << endl;
 return 0;
 }

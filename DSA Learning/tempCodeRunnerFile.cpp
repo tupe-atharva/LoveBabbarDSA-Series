@@ -1,1 +1,2 @@
-cout<<length;
+int num = 5;
+// int *p =&num;
