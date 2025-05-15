@@ -23,7 +23,7 @@
 // int main(){ 
     
 //     int n = 8;
-//     cout << "The fibonacci series upto 8th element is : " <<     fibonacci(n) << endl;
+//     cout << "The fibonacci series upto 8th element is : " << fibonacci(n) << endl;
 
 //     return 0;
 // }
