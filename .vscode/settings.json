@@ -9,6 +9,8 @@
         "array": "cpp",
         "bitset": "cpp",
         "initializer_list": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "__bit_reference": "cpp",
+        "ios": "cpp"
     }
 }
