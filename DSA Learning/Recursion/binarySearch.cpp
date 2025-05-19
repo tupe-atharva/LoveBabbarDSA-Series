@@ -66,6 +66,7 @@ bool binarySearch (int *arr , int start , int end , int key){
     if (arr[mid] == key) // ie. Element is found.
         return true;
 
+
     // Recursive Relation :
     if(arr[mid] > key) // move towards the left.
         return binarySearch(arr , start , mid - 1, key);
