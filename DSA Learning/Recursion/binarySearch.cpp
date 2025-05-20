@@ -81,7 +81,7 @@ int main(){
     
     int arr[] = {1,2,3,4,5,6,7,8};
     int size = 8;
-    int key = 1;
+    int key = 9723;
     int start = 0;
     int end = size - 1;
     int ans = binarySearch (arr , start, end, key);
