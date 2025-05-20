@@ -6,6 +6,7 @@ using namespace std;
 
 void reverse(char *st, int s , int e){
 
+    cout << "Call received for : " << st << endl;
     // Base case : when start and end pointers cross each other, stop.
     if(s >=e)
         return ;
@@ -26,10 +27,11 @@ int main(){
     //string st = "abcd" ;
     // Will not work with strings - as you are passing the string by value, so a copy of st is made and is edited and orignal remains unchanged.
     // But when you pass a character array, its address is passed so changes are reflected in the main func as well.
-
+    cout << endl;
     char st[5] = "abcd";
     reverse(st , 0 , 3);
-    cout << "The reversed string is : " << st << endl;
+    cout << endl << "The reversed string is : " << st << endl;
+    cout << endl;
  
     return 0;
 }
