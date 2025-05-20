@@ -30,6 +30,7 @@ int main(){
     cout << endl;
     char st[5] = "abcd";
     reverse(st , 0 , 3);
+    // Note : For a string the end pointer should start from size - 1, but for a character array, the end pointer must start from size - 2, because of the null character present at the end.
     cout << endl << "The reversed string is : " << st << endl;
     cout << endl;
  
