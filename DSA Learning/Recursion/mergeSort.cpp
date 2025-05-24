@@ -53,7 +53,8 @@ void merge (int *arr, int start , int end){
     while(index2 < len2)
         arr[mainArrayIndex++] = subArr2[index2++];
 
-
+    delete []subArr1;
+    delete []subArr2;
 
 }
 
@@ -80,8 +81,8 @@ void mergeSort ( int *arr , int start , int end){
 
 int main(){ 
  
-    int arr[5] = { 23, 45, 22, 54, 12};
-    int length = 5;
+    int arr[9] = { 23, 45, 22, 54, 12 , 1 ,101,4, 234};
+    int length = 9;
     cout << "The initial array was : ";
     for (int i = 0; i < length; i++)
     {
