@@ -3,6 +3,7 @@ using namespace std;
 
 void merge (int *arr1, int *arr2, int len1 , int len2){
     
+    // dynamically create the result array of length = len1 + len2;
     int *finalArray = new int[len1 + len2];
 
     int index1 = 0 , index2 = 0;
