@@ -12,6 +12,8 @@ int partition(int arr[] , int start , int end){
     }
 
     int pivotIndex = start + count;
+    // We use start + count and not just count as in every iteration the array gets sub-divided and the value of start keeps changing.
+    
     swap (arr[start] , arr[pivotIndex]); // Swap the chosen pivot element to its right place
 
     // Swap elements in a way that all elements smaller than pivot element are on its right and all elements greater than the pivot element are on the right of the pivot element.
