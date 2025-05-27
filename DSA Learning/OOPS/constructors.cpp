@@ -21,6 +21,13 @@ class hero{
             // LHS denotes the health variable of the class.
         }
 
+        // Copy Constructor :
+        hero(hero &temp){
+            cout << "Copy Constructor Invoked !" << endl;
+            this -> health = temp.health;
+            this -> age = temp.age;
+        }
+
         int health = 80;
         int age = 22 ;
         char level = 'A';
@@ -28,16 +35,17 @@ class hero{
 
 int main(){ 
 
-    cout << endl;
-    // Static creation of obj.
-    hero h1; // only calls the default constructor
-    hero h2(85); // invokes the parameterized const as a parameter is passed.
-    cout << endl;
+    // cout << endl;
+    // // Static creation of obj.
+    // hero h1; // only calls the default constructor
+    // hero h2(85); // invokes the parameterized const as a parameter is passed.
+    // cout << endl;
 
-    // Dynamic creation of obj.
-    hero *h3 = new hero; // only calls the default constructor
-    hero *h4 = new hero(67); // invokes the parameterized const as a parameter is passed.
+    // // Dynamic creation of obj.
+    // hero *h3 = new hero; // only calls the default constructor
+     hero *h4 = new hero(67); // invokes the parameterized const as a parameter is passed.
 
+    hero h5(*h4);
 
 
  
