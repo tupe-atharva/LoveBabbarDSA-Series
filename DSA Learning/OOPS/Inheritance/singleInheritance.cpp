@@ -21,8 +21,8 @@ int main(){
     cout << c1.a << endl;
     cout << c1.b << endl;
     cout << c1.c << endl;
+    // a and b are accessed using inheritance.
+    // c was already a data member of child.
 
-
- 
     return 0;
 }
