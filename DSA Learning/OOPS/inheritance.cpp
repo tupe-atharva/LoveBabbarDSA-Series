@@ -57,5 +57,9 @@ int main(){
     //cout << atharva.race << endl;
     cout << endl;
  
+    // Accessing Private members of the parent class through the child class is not possible.
+    //cout << atharva.race << endl;
+    // this will return an error as race is a private member.
+
     return 0;
 }
