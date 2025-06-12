@@ -25,7 +25,7 @@ void insertAtTail(node* &tail , int d){
 void deleteAtNode(node* &head ,int position){
     // Samaj 4th poistion ka element delete karna hai, toh 3rd position tak ja and uska next pointer 4th ki jagah 5th position ko point karva.
 
-    if(position == 1){
+    if(position == 1){ // Deleting the Head.
         head = head -> next;
         return ;
     }
