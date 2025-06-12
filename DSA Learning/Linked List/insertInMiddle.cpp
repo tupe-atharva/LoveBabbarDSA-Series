@@ -35,7 +35,7 @@ void insertAtTail(node* &tail , int d){
 }
 
 // Function to insert an element at the given index in a LL.
-void insertAtPositon(node* &head , int position , int data){
+void insertAtPositon(node* &tail , node* &head , int position , int data){
 
     // Check if entered positon is head, then call the insertAtHead function and place new element at 1st position ie. head.
     if(position == 1){
@@ -51,6 +51,14 @@ void insertAtPositon(node* &head , int position , int data){
         count++;
     }
     // This while loop puts temp to the preceeding position of the position where we have to insert the element.
+
+    // What if the position is the Tail ?
+    // condition for tail is that it points to NULL
+    if(temp -> next == NULL){
+        insertAtTail(tail ,data);
+        return;
+        // In this way element is inserted at the end and the tail is also updated to be the new element.
+    }
 
     // Create a new node for new data to insert.
     node *nodeToInsert = new node(data);
@@ -86,7 +94,7 @@ int main(){
     cout << endl;
     print(head);
 
-    insertAtPositon(head , 4, 48);
+    insertAtPositon(tail , head , 7, 48);
     print(head);
     cout << endl;
     return 0;
