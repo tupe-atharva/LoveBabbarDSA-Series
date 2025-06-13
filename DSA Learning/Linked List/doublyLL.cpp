@@ -57,6 +57,41 @@ void insertAtTail(node* &tail , int data){
     tail = temp; // update the tail to be the new node.
 }
 
+void insertAtPosition(node* &head , node* &tail, int position, int data){
+
+    // INSERTING AT FIRST POSITION ie. HEAD.
+    if(position == 1){
+        insertAtHead(head, data);
+        return;
+        // use return as if the condition is true, we dont want the rest of the function to be invoked and get returned from here itself.
+    }
+
+    // First reach (postion - 1) wala node
+    int count = 1;
+    node*temp = head;
+    while(count < position - 1){
+        temp = temp -> next;
+        count++;
+    }
+   
+
+    // INSERTING AT LAST POSITION ie. TAIL.
+    // Condition for tail is that it points to NULL.
+    if(temp -> next == NULL){
+        insertAtTail(tail ,data);
+        return;
+        // In this way element is inserted at the end and the tail is also updated to be the new element.
+    }
+
+    node *nodeToAdd = new node(data); // Create new node with the data as passed to be placed at the given position.
+
+    nodeToAdd -> next = temp -> next;
+    temp -> next -> prev  = nodeToAdd;
+    temp -> next = nodeToAdd;
+    nodeToAdd -> prev = temp;
+    
+}
+
 int main(){ 
  
     node *node1 = new node(10);
@@ -74,7 +109,12 @@ int main(){
     insertAtTail(tail , 40);
 
     print(head);
-    cout << "Length is : "<< getLength(head) << endl;
+    insertAtPosition(head, tail , 2 ,768 );
+    insertAtPosition(head, tail , 1 ,101 );
+    insertAtPosition(head, tail , 7 ,768 );
+    print(head);
+
+    //cout << "Length is : "<< getLength(head) << endl;
 
     return 0;
 }
