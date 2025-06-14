@@ -109,6 +109,41 @@ void insertAtPosition(node* &head , node* &tail, int position, int data){
     
 }
 
+void deleteNode(node* &head,node* &tail,  int position){
+
+    // Deleting the Head node.
+    if(position == 1){
+        node *temp = head;
+        temp -> next -> prev = NULL; // ie. 2nd position's prev pointer is set to NULL.
+        head = temp -> next; // Marking 2nd position as the head.
+        temp -> next = NULL; // ie. 1st position's next pointer is set to NULL.
+        delete temp; // Free memory.
+    }
+
+    // Deleting the Last Node
+    node *temp = head;
+    if(temp -> next == NULL){
+        temp -> prev -> next = NULL;
+        tail = temp -> prev;  // Update tail
+        delete temp;
+        return;
+    }
+
+    else{
+        // Deleting in the Middle.
+        node *temp = head;
+        // Traverse upto the given position.
+        int count = 1;
+        while(count < position){
+            temp = temp -> next;
+            count++;
+        }
+        temp -> prev -> next = temp -> next;
+        temp -> next -> prev = temp -> prev;
+        delete temp;
+    }
+}
+
 int main(){ 
  
     node *node1 = new node(10);
@@ -125,10 +160,14 @@ int main(){
     insertAtTail(tail , 30);
     insertAtTail(tail , 40);
 
-    print(head);
+    //print(head);
     insertAtPosition(head, tail , 2 ,768 );
     insertAtPosition(head, tail , 1 ,101 );
     insertAtPosition(head, tail , 7 ,768 );
+    print(head);
+    //deleteNode(head , 2);
+    //deleteNode(head , 1);
+    deleteNode(head ,tail, 7);
     print(head);
 
     //cout << "Length is : "<< getLength(head) << endl;
