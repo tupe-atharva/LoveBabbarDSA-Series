@@ -85,7 +85,50 @@ void print(node* tail) {
     cout << endl;
 }
 
-void deleteNode(node* & tail , int position){
+void deleteNode(node* & tail , int value){
+
+    // Empty List :
+    if(tail == NULL){
+        cout << "List is Empty " << endl;
+        return ;
+    }
+    
+    else{
+        // Non-empty & assuming value is present in the CLL;
+        // deleting on the basis of value of element.
+        // Reach the preceeding node of the node to delete.
+        node *prev = tail;
+        node *curr = prev -> next;
+
+        // Handling single node CLL :
+        if(curr == prev){
+            tail = NULL;
+        }
+
+        while (curr -> data != value){
+            prev = curr;
+            curr = curr -> next;
+        }// this loop puts curr on the given value & prev on the preceeding node.
+        prev -> next = curr -> next;
+        // Edge case while deleting the first element, as tail pointer gets deleted too then.
+        if(tail == curr){
+            tail = prev;
+        }
+        // Without above if case :
+        // 10 69 101 78 99 
+        // Memory is free for Node with data 10
+        // zsh: segmentation fault 
+
+        // With edge Case :
+        // 10 69 101 78 99 
+        // Memory is free for Node with data 10
+        // 99 69 101 78 
+        // Tail : 99
+
+        curr -> next = NULL;
+        delete curr; // Free up memory.
+    }
+   
 
 }
 int main(){ 
@@ -101,7 +144,8 @@ int main(){
     //print(tail);
     insertNode(tail , 101 , 69);
     print(tail);
-    
+    deleteNode(tail , 10);
+    print(tail);
 
     cout << "Tail : " << tail -> data << endl;
     return 0;
