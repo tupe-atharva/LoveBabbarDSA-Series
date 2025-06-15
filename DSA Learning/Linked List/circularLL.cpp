@@ -85,7 +85,9 @@ void print(node* tail) {
     cout << endl;
 }
 
+void deleteNode(node* & tail , int position){
 
+}
 int main(){ 
     
     node *node1 = new node(10);
@@ -96,6 +98,7 @@ int main(){
     insertNode(tail , 69 , 10); // this line adds node with data 69 after node with data 10.
     insertNode(tail , 78 , 69);
     insertNode(tail , 99 , 78);
+    //insertNode(tail , 69 , 101);
     print(tail);
 
     cout << "Tail : " << tail -> data << endl;
