@@ -98,8 +98,10 @@ int main(){
     insertNode(tail , 69 , 10); // this line adds node with data 69 after node with data 10.
     insertNode(tail , 78 , 69);
     insertNode(tail , 99 , 78);
-    //insertNode(tail , 69 , 101);
+    //print(tail);
+    insertNode(tail , 101 , 69);
     print(tail);
+    
 
     cout << "Tail : " << tail -> data << endl;
     return 0;
