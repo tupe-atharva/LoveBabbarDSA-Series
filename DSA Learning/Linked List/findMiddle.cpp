@@ -37,27 +37,23 @@ void print(node* &head){
     cout << endl;
 }
 
-int findMiddle(node* &head){
-
+int getLength(node* &head){
     int length = 0;
     node *temp = head;
     while (temp != NULL){
         temp = temp -> next;
         length++;
     }
-    //cout << "Length : " <<length << endl;
-    int position;
-    if(length%2 == 0){
-        // ie.even.
-        position = (length/2) + 1;
-    }
-    else{
-        position = (length/2) + 1;
-    }
-    //return position;
-    node *ans = head;
+    return length;
+}
+
+int findMiddle(node* &head){
+
+    int length = getLength(head);
+    node *ans = head; 
     int count = 1;
-    while(count < position){
+    while(count < (length/2) + 1){
+        // middle elem = (length/2) + 1);
         ans = ans -> next;
         count ++;
     }
