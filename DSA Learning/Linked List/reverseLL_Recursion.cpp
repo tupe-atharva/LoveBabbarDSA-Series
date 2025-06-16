@@ -38,19 +38,22 @@ void print(node* &head){
     cout << endl;
 }
 
-void reverseLL(node* &head){
-    node *curr= head;
-    node *prev = NULL;
-    node *forward = NULL;
-    
-    while(curr != NULL){
-        
-        forward = curr -> next;
-        curr -> next = prev;
-        prev = curr;
-        curr = forward;
+// Recursive function to reverse a Linked List.
+void reverseLL(node* &head , node* &curr, node* & prev){
+   
+    // Base Case :
+    if(curr == NULL){
+        head = prev;
+        return;
     }
-    head = prev; // as in the end the prev pointer points to head of the reversed LL.
+    
+    // Processing :
+    node *forward = curr -> next;
+
+    // Recursive Relation :
+    reverseLL(head, forward, curr);
+    curr -> next = prev;
+    
 }
 
 int main(){ 
@@ -63,7 +66,10 @@ int main(){
     insertNode(head , 5 , 50);
     print(head);
     
-    reverseLL (head);
+    node *prev = NULL;
+    node *curr = head;
+
+    reverseLL (head , curr , prev);
     print(head);
 
     return 0;
