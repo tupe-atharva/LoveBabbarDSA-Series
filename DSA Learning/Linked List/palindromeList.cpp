@@ -70,14 +70,14 @@ void insertAtPositon(node* &tail , node* &head , int position , int data){
 }
 
 // Functiont to traverse and print a LL.
-void print(node* &head){
+    void print(node* &head){
 
-    node* temp = head;
-    while (temp != NULL){
-        cout << temp -> data << " "; // Print the value of data at location pointed by temp.
-        temp = temp -> next; // Update temp to next location.
-    } cout << endl; 
-}
+        node* temp = head;
+        while (temp != NULL){
+            cout << temp -> data << " "; // Print the value of data at location pointed by temp.
+            temp = temp -> next; // Update temp to next location.
+        } cout << endl; 
+    }
 
     node* findMiddle(node* &head) {
         node* curr = head->next;
