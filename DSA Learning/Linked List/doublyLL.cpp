@@ -52,7 +52,7 @@ void insertAtHead(node* & head, int data){
         // Create a new node
         node *temp = new node(data);
         temp -> next = head;
-        head -> prev = temp; // this line ensures that prev of the current head points to temp and thus we get double suded connection.
+        head -> prev = temp; // this line ensures that prev of the current head points to temp and thus we get double sided connection.
         head = temp;
     }
 }

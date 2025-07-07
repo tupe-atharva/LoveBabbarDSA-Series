@@ -79,12 +79,9 @@ void print(node* &head){
     } cout << endl; 
 }
 
-
-class Solution {
-public:
-    node* findMiddle(ListNode* &head) {
-        ListNode* curr = head->next;
-        ListNode* prev = head;
+    node* findMiddle(node* &head) {
+        node* curr = head->next;
+        node* prev = head;
 
         while (curr != NULL) {
             curr = curr->next;
@@ -96,8 +93,8 @@ public:
         return prev;
     }
 
-    int getLength(ListNode* &head) {
-        ListNode *temp = head;
+    int getLength(node* &head) {
+        node *temp = head;
         int length = 0;
         while (temp != NULL) {
             temp = temp->next;
@@ -106,10 +103,10 @@ public:
         return length;
     }
 
-    ListNode* reverse(ListNode* &middle) {
-        ListNode *prev = NULL;
-        ListNode *forward = NULL;
-        ListNode *curr = middle;
+    node* reverse(node* &middle) {
+        node *prev = NULL;
+        node *forward = NULL;
+        node *curr = middle;
         while (curr != NULL) {
             forward = curr->next;
             curr->next = prev;
@@ -119,20 +116,20 @@ public:
         return prev;
     }
 
-    bool isPalindrome(ListNode* head) {
+    bool isPalindrome(node* head) {
 
         if (head->next == NULL) {
             return true;
         }
         if (head->next->next == NULL) {
-            if (head->val == head->next->val) {
+            if (head->data == head->next->data) {
                 return true;
             } else {
                 return false;
             }
         }
 
-        ListNode* middle = findMiddle(head);
+        node* middle = findMiddle(head);
         int length = getLength(head);
 
         if (length % 2 == 0) {
@@ -142,11 +139,11 @@ public:
             middle = reverse(middle->next);
         }
 
-        ListNode *temp = head;
+        node *temp = head;
 
         if (length % 2 == 0) {
             while (middle != NULL) {
-                if (temp->val == middle->val) {
+                if (temp->data == middle->data) {
                     temp = temp->next;
                     middle = middle->next;
                 }
@@ -157,7 +154,7 @@ public:
         }
         else {
             while (middle != NULL) {
-                if (temp->val == middle->val) {
+                if (temp->data == middle->data) {
                     temp = temp->next;
                     middle = middle->next;
                 }
@@ -169,7 +166,7 @@ public:
 
         return true;
     }
-};
+
 
 
 int main(){ 
@@ -184,7 +181,13 @@ int main(){
     insertAtPositon(tail , head , 3, 3);
     insertAtPositon(tail , head , 4, 2);
     print(head);
-    cout << endl;
+    //cout << endl;
+    bool ans = isPalindrome(head);
+    
+    if(ans)
+        cout << "The entered Linked List is a Palindrome" << endl;
+    else
+        cout << "The entered Linked List is NOT a Palindrome" << endl;
 
     return 0;
 }

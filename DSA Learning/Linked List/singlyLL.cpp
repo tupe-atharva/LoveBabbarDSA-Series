@@ -24,7 +24,7 @@ void insertAtHead(node* &head, int d){
     // Set pointer of this newly created node - temp to head.
     temp -> next = head;
 
-    // Increment head to point to the newly created node.
+    // update head to point to the newly created node.
     head = temp; 
 }
 
@@ -35,7 +35,7 @@ void insertAtTail(node* &tail , int d){
 }
 
 
-// Functiont to traverse and print a LL.
+// Function to traverse and print a LL.
 void print(node* &head){
 
     node* temp = head;
