@@ -61,10 +61,14 @@ int main(){
     insertNode(head , 3 , 30);
     insertNode(head , 4 , 40);
     insertNode(head , 5 , 50);
+    cout << endl << "Orignal Linked List : " << endl;
     print(head);
+    cout << endl;
     
     reverseLL (head);
+    cout << "Reversed Linked List : " << endl;
     print(head);
+    cout << endl;
 
     return 0;
 }
