@@ -3,6 +3,7 @@
 #include<math.h>
 using namespace std;
 
+
 class node{
     public:
         int data;
