@@ -70,6 +70,7 @@ int main(){
     // cout << temp -> data << endl;
     // cout << head -> data << endl;
     // temp -> next = head;
+    cout << endl;
     print(head);
     
     if(checkCircular(head)){
@@ -78,6 +79,6 @@ int main(){
     else{
          cout << "The given LL is NOT circular" << endl;
     }
-    
+    cout << endl;
     return 0;
 }
