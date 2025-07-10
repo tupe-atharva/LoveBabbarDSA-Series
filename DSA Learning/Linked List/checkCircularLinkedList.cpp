@@ -31,10 +31,31 @@ void print(node* &head){
     // cout << temp -> data << "  "  << temp -> next << endl;
 }
 
-void checkCircular(node *head){
+bool checkCircular(node *head){
 
+    // 0 elements in LL.
+    if(head == NULL)
+        return true;
+        // when no element is present we consider the list to be circular.
+    
 
+    // 1 element in LL. --> this case is handled in more than 1 element's case.
 
+    // More than 1 element.
+    node *temp = head -> next;
+    // use this temp pointer from 2nd element.
+
+    while(temp != NULL && temp != head){
+        temp = temp -> next;
+        // temp == NULL -- indicates the end of list, thus not circular.
+        // temp == head -- indicated that pointer reached back to head, so list is circular.
+    }
+    
+        
+    if(temp == head)
+        return true; // circular
+
+    return false; // not circular
 }
 
 int main(){ 
@@ -48,7 +69,15 @@ int main(){
     insert (temp, 50);
     // cout << temp -> data << endl;
     // cout << head -> data << endl;
+    // temp -> next = head;
     print(head);
-
+    
+    if(checkCircular(head)){
+        cout << "The given LL is circular" << endl;
+    }
+    else{
+         cout << "The given LL is NOT circular" << endl;
+    }
+    
     return 0;
 }
