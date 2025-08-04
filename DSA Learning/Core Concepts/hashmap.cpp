@@ -42,6 +42,15 @@ int main(){
  
     // Erase Function :- Erases all entries of the passed key
     map1.erase("aarya");
-    cout << map1["aarya"] << endl;
+    cout << map1["aarya"] << endl << endl;
+
+    // ITERATORS :-
+   unordered_map<string, int> ::iterator abc = map1.begin();
+
+    while(abc != map1.end()){
+        cout << abc-> first << " " << abc-> second << endl;
+        abc++;
+    }
+
     return 0;
 }
